@@ -29,7 +29,7 @@ public class objectSample {
         System.out.println("");
         
         //追記ここから
-        //ポリモーフィズムの確認、PMインスタンスの作成
+        //PMインスタンスの作成
         Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
         
         //インスタンスメソッドの呼び出し
@@ -43,8 +43,6 @@ public class objectSample {
         //1行開ける
         System.out.println("");
         
-        
-        //追記ここから
         //アルバイトインスタンスの作成
         var parttameWoker = new ParttimeWorker("太田", department);
         
