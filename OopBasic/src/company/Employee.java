@@ -11,12 +11,17 @@ public abstract class Employee implements Workable {
     
     
     //コンストラクター
-    public Employee(String name, Department department, String position, int employeeId) {
+        public Employee(String name, Department department, String position, int employeeId) {
         this.name = name;
         this.department = department;
         this.position = position;
         this.employeeId = employeeId;
     }
+    
+    
+    
+    
+    
     
     //報告メソッド
     public void report(int times) {
@@ -27,6 +32,14 @@ public abstract class Employee implements Workable {
     public void report() {
         report(1);
     }
+    
+    
+  //専門言語発表メソッド
+    public abstract void announceProgrammingLanguage();
+    
+    //抽象メソッドに変更
+    //言語発表メソッド
+    public abstract void developSoftware();
     
     //抽象メソッドに変更
     //会議に参加するメソッド

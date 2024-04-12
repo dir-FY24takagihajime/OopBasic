@@ -3,36 +3,32 @@ package company;
 public class objectSample {
 
     public static void main(String[] args) {
-        //インスタンスの作成
+        //部署インスタンスの作成(コンストラクターメソッドを使用)
         var salesDepartment = new Department("営業部", "xx", 1000000);
-        Employee sales = new Sales("鈴木", salesDepartment, "課長", 100);
-        
-        //インスタンスメソッドの呼び出し
-        sales.report();
-        sales.report(2);
-        sales.joinMeeting();
-        
-        //1行開ける
-        System.out.println("");
-        
-        //インスタンスの作成
         var devDepartment = new Department("開発部", "yy", 0);
-        var engineer = new Engineer("田中", devDepartment, "一般社員", 88, "Java"); //変更
-        
+        //人物インスタンスの作成
+        Employee sales = new Sales("鈴木", salesDepartment, "課長", 100, "なし");
+        Employee sales1 = new Sales("吉田", salesDepartment, "部長", 200, "なし");
+        Employee engineer = new Engineer("田中", devDepartment, "一般社員", 88, "Java");
+        Employee engineer2 = new Engineer("袴田", devDepartment, "一般社員", 300, "python");
+        Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
+        var parttimeWoker = new ParttimeWorker("太田", salesDepartment);
         
         //インスタンスメソッドの呼び出し
-        engineer.report();
-        engineer.joinMeeting();
-        engineer.developSoftware();
+        sales.report(); 
+        sales1.report(2);
+        sales1.joinMeeting();
+        sales1.announceProgrammingLanguage();
         
-        //1行開ける
         System.out.println("");
         
-        //追記ここから
-        //PMインスタンスの作成
-        Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
+        engineer.report();
+        engineer2.joinMeeting();
+        engineer2.announceProgrammingLanguage();
+        engineer2.developSoftware();
         
-        //インスタンスメソッドの呼び出し
+        System.out.println("");
+        
         projectManager.report();
         projectManager.joinMeeting();
         if (projectManager instanceof Engineer) {
@@ -40,17 +36,12 @@ public class objectSample {
             ((Engineer) projectManager).developSoftware();
         }
         
-        //1行開ける
         System.out.println("");
         
-        //アルバイトインスタンスの作成
-        var parttameWoker = new ParttimeWorker("太田", salesDepartment);
-        
-        //実装したメソッドの呼び出し
         ((Workable) sales).work();
         ((Workable) engineer).work();
         ((Workable) projectManager).work();
-        ((Workable) parttameWoker).work();
+        ((Workable) parttimeWoker).work();
     }
 
 }
